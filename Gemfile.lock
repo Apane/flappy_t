@@ -63,6 +63,8 @@ GEM
     multi_xml (0.5.5)
     pg (0.17.0)
     polyglot (0.3.3)
+    protected_attributes (1.0.2)
+      activemodel (>= 4.0.0.beta, < 5.0)
     pry (0.9.12.3)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -148,6 +150,7 @@ DEPENDENCIES
   jquery-ui-rails
   json (~> 1.7.7)
   pg
+  protected_attributes
   pry-rails
   rails (= 4.0.0)
   rails_config
