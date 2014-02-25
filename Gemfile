@@ -27,3 +27,4 @@ gem 'amazon_flex_pay'
 
 # Configuration File
 gem 'rails_config'
+gem 'protected_attributes'
