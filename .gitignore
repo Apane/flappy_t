@@ -23,3 +23,10 @@ config/environments/*.local.yml
 
 # yes, I use an ide
 .idea/*
+
+heroku_keys.textfile
+
+.DS_store
+
+# Ignore application configuration
+/config/application.yml

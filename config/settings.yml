@@ -39,14 +39,14 @@ use_video_placeholder: true
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
 
 # To find your access key and secret key, head over to here --> http://bit.ly/R4I4ky (Follow that guide in the Seller Central page)
-amazon_access_key: "AKIAIVQUCXMR3U4UPPXA "
-amazon_secret_key: "DUdRqIFqsI8XwHa4MGqNrG9r7gi660fjYg4hBIqR"
+amazon_access_key: ENV["AMAZON_ACCESS_KEY"]
+amazon_secret_key: ENV["AMAZON_SECRET_KEY"]
 price: 	19.95
 
 # if use_payment_options is set to true, then a set of radio buttons will be displayed with various payment options.
 # There is a PaymentOption model for storing info about payment options.  To set up your payment options you should
 # put code in seeds.rb, then run rake db:seed
-use_payment_options: false
+use_payment_options: lsefa
 
 payment_description: "You really should change this text because people will see it on Amazon's order page!!!!!"
 

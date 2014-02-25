@@ -11,12 +11,14 @@ gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 
 gem 'thin'
 gem 'pg'
+gem "figaro"
 
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'sass-rails',   '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
+gem 'bootstrap-wysihtml5-rails'
 
 gem 'rspec-rails', '~> 2.0'
 gem 'shoulda'
