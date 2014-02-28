@@ -2,7 +2,7 @@
   <div id="video">
     <% if Settings.use_video_placeholder %>
       <div id="video_image">
-        <img alt="video_place_holder" width='512px' height='385px' src="/assets/video_placeholder.png" />
+        <%= image_tag 'video_placeholder.png', size: '512x385', alt: 'video_place_holder' %>
       </div>
       <div id="player" class="hidden" style="display: none;">
         <object width="512" height="385">
@@ -40,7 +40,7 @@
           </li>
       <% end %>
     </ul>
-    
+
     <% if Order.revenue.to_f < Order.goal.to_f %>
       <div id='progress_bg' class='small'>
         <div id='progress' class='' style='width: <%= Order.percent %>%;'>
@@ -53,7 +53,7 @@
         <div id='progress_text'><%= Order.percent %>% <%= Settings.progress_text %></div>
       </div>
     <% end %>
-    
+
     <div id="reserve_container">
       <p id="ship_date"><%= Settings.ships %></p>
       <a href="/preorder/checkout" class="blue_button reserve"><%= Settings.call_to_action %></a>
@@ -61,7 +61,7 @@
       <p><%= Settings.dont_give_them_a_reason_to_say_no %></p>
       <%= like_button %>
     </div>
-    
+
   </div>
-  
+
 </div>
