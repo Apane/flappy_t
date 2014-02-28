@@ -1,22 +1,32 @@
-<div class="wrapper clearfix">
-  <div id="video">
-    <% if Settings.use_video_placeholder %>
-      <div id="video_image">
-        <%= image_tag 'video_placeholder.png', size: '512x385', alt: 'video_place_holder' %>
-      </div>
+<div class="wrapper-getflappy clearfix" id="congrats">
+ <div class="row">
+  <div class="col-md-6">
+   <div class="leftside">
+     <div id="video">
+     <% if Settings.use_video_placeholder %>
+       <div id="video_image">
+      <%= image_tag 'video_placeholder.png', size: '450x380', alt: 'video_place_holder' %>
+       </div>
       <div id="player" class="hidden" style="display: none;">
-        <object width="512" height="385">
+        <object width="450" height="380">
           <param name="movie" value="<%= Settings.video_embed_url %>?autohide=1&showinfo=0&rel=0&autoplay=1" />
           <param name="allowFullScreen" value="true" />
           <param name="allowscriptaccess" value="always" />
-          <embed src="<%= Settings.video_embed_url %>?autohide=1&showinfo=0&rel=0&autoplay=1" type="application/x-shockwave-flash" width="512" height="385" allowscriptaccess="always" allowfullscreen="true"></embed>
+          <embed src="<%= Settings.video_embed_url %>?autohide=1&showinfo=0&rel=0&autoplay=1" type="application/x-shockwave-flash" width="450" height="380" allowscriptaccess="always" allowfullscreen="true"></embed>
         </object>
       </div>
-    <% else %>
-      <iframe width='512' height='385' src="<%= video_url %>"></iframe>
+      <% else %>
+      <iframe width='450' height='380' src="<%= video_url %>"></iframe>
     <% end %>
   </div>
+ </div>
+</div>
 
+<div class="col-md-6">
+<div class="rightside">
+Flappy is not just a plush toy.
+He’s wireless and controls the
+game when you lift him up.
   <div id="backing">
     <ul>
       <li class="stats" id="backers">
@@ -65,3 +75,8 @@
   </div>
 
 </div>
+</div>
+</div>
+</div>
+
+
