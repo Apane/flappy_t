@@ -7,13 +7,39 @@
     font-size: inherit !important;
   }
 }
-#header 
+#header
 {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.29);
+  background: #fff;
+  background-image: -webkit-linear-gradient( rgba(241,241,241,0.05) 0%,rgba(0,0,0,0.05) 100%);
+  background-image: linear-gradient( rgba(241,241,241,0.05) 0%,rgba(0,0,0,0.05) 100%);
   width: 100%;
   padding: 26px 0;
-  -moz-box-shadow:    0px 1px 3px 0px #acacac;
-  -webkit-box-shadow: 0px 1px 3px 0px #acacac;
-  box-shadow:         0px 1px 3px 0px #acacac;
-  background: #fcfcfc;
   position: relative;
 }
+
+#header_links {
+float: right;
+}
+
+.nav1 {
+font-family: "ProximaNova-Semibold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+color: #0E96E4;
+margin-top: 30px;
+border: 1px solid #d3d3d3;
+float: left;
+border-radius: 5px;
+padding: 8px 12px;
+font-size: 16px;
+margin-right: 5px;
+
+  a {
+  color: #0E96E4;
+  }
+  a:hover {
+  color: black;
+  }
+}
+
+
+

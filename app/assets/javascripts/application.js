@@ -18,4 +18,5 @@
 //= require jquery.textchange
 //= require preorder
 //= require bootstrap-wysihtml5
+//= require bootstrap.min
 //= require_tree .
