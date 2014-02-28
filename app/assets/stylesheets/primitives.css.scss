@@ -166,6 +166,11 @@ h5 {
   border-bottom: 1px solid $gray_background_border_color;
 }
 
+.mid {
+  padding-bottom: 50px;
+  font-family: 'boxyfont';
+}
+
 .button:hover {
   text-decoration: none;
   color: $button_hovered_color;
