@@ -154,6 +154,7 @@ h5 {
   margin: 0 auto;
   background-color: #55C9D0;
   border-bottom: 1px solid #C4C4C4;
+  height: 180px;
 }
 
 .wrapper-getflappy {
@@ -171,8 +172,20 @@ h5 {
   padding: 0px 10px 0px 10px;
 }
 
-.rightside {float:right;}
-.leftside {float:left;}
+.rightside {
+           background-color: #FFFFFF;
+           padding: 10px;
+           margin-left: auto;
+           margin-right: auto;
+           width: 25em
+         }
+
+.leftside {
+           background-color: #FFFFFF;
+           padding: 7px 88px 12px 8px;
+           margin-left: auto;
+           margin-right: auto;
+           width: 25em}
 
 .center {
   text-align: center;
@@ -239,6 +252,7 @@ body.lt-ie9 {
   -moz-border-radius: $button_border_radius;
   border-radius: $button_border_radius;
   font-family: $primary_font, $secondary_font, $tertiary_font;
+  border-bottom: 5px solid #BA6209;
 }
 .blue_button:hover {
   -moz-box-shadow:
@@ -250,25 +264,25 @@ body.lt-ie9 {
   box-shadow:
     0 1px 1px $button_box_shadow_color /* drop shadow */,
     inset 0 -1px 1px $button_box_shadow_inset_color /* inner shadow */;
-  background-image: $button_ie9_gradient_hover; /* gradient fill */
-  background-image: -moz-linear-gradient(90deg, $button_top_gradient_hover 0%, $button_bottom_gradient_hover 100%); /* gradient fill */
-  background-image: -o-linear-gradient(90deg, $button_top_gradient_hover 0%, $button_bottom_gradient_hover 100%); /* gradient fill */
-  background-image: -webkit-linear-gradient(90deg, $button_top_gradient_hover 0%, $button_bottom_gradient_hover 100%); /* gradient fill */
-  background-image: linear-gradient(90deg, $button_top_gradient_hover 0%, $button_bottom_gradient_hover 100%); /* gradient fill */
+  background-image: -webkit-linear-gradient( #BA6209 0%,#BA6209 100%);
+  background-image: linear-gradient( #BA6209 0%,#BA6209 100%);
   text-decoration: none;
   color: #fff;
 }
 .blue_button {
-font-family: "ProximaNova-Semibold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-box-shadow: inset 0 1px 0 #63b9eb,inset 0 0 3px rgba(0,0,0,0.57);
-background: #00a1ff;
-background-image: -webkit-linear-gradient( #00a1ff 0%,#2287c1 100%);
-background-image: linear-gradient( #00a1ff 0%,#2287c1 100%);
+font-family: "boxyfont", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+box-shadow: inset 0 1px 0 #F7931E,inset 0 0 3px rgba(0,0,0,0.57);
+background: #F7931E;
+background-image: -webkit-linear-gradient( #F7931E 0%,#F7931E 100%);
+background-image: linear-gradient( #F7931E 0%,#F7931E 100%);
 color: #fff;
+border-bottom: 5px solid #BA6209;
 text-shadow: 0 -1px 0 #005d93;
-border-radius: 4px;
+border-radius: 10px;
 border: 1px solid #195579;
 display: block;
+border-bottom: 5px solid #BA6209;
+
 }
 
 

@@ -39,8 +39,8 @@ use_video_placeholder: true
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
 
 # To find your access key and secret key, head over to here --> http://bit.ly/R4I4ky (Follow that guide in the Seller Central page)
-amazon_access_key: "env"
-amazon_secret_key: "pass"
+amazon_access_key: "AKIAIP53V47PUO2UXPBA"
+amazon_secret_key: "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"
 price: 	19.95
 
 # if use_payment_options is set to true, then a set of radio buttons will be displayed with various payment options.
@@ -63,7 +63,7 @@ primary_stat: "backers"
 primary_stat_verb: 'backer'
 
 # The 2nd call to action button, towards the middle-ish of the page
-middle_reserve_text: "Get Flappy"
+middle_reserve_text: "GET FLAPPY"
 
 # When the project should end
 expiration_date: <%= DateTime.now + 29 %>
@@ -77,7 +77,7 @@ progress_text: "Implemented"
 ships: "Help us bring Flappy to life!"
 
 # On Lockitron, it's "Reserve Now"
-call_to_action: "Get Flappy"
+call_to_action: "GET FLAPPY"
 # On Lockitron, this is "Only $149 for a limited time"
 price_human: ""
 
