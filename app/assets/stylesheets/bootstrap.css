@@ -332,8 +332,7 @@ textarea {
 }
 
 a {
-  color: #428bca;
-  text-decoration: none;
+  color: #55C9D0;
 }
 
 a:hover,
@@ -6810,4 +6809,8 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+a {
+  color: #55C9D0 !important;
 }
