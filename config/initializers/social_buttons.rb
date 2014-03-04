@@ -8,8 +8,5 @@ SocialButtons.config do |social|
 
   end
 
-    tweet.default_options = {:via => "myself"}
-    tweet.default_options = {:text => "Share about Flappy toy!!"}
-    tweet.default_options = {:url => "http://www.friendiose.com"}
-  end
+
 end
