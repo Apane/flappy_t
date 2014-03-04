@@ -1,6 +1,8 @@
 .big_wrapper {
-  border-bottom: 1px solid #d2d2d2;
   background: #fff;
+}
+.big_wrapper-about {
+  background: transparent;
 }
 .big_wrapper .wrapper {
   padding: 35px 0;
@@ -35,6 +37,11 @@ h3 {
   width: 936px;
 }
 
+#two-about {
+  height: 800px;
+  width: 936px;
+}
+
 #three {
   height: 550px;
   width: 936px;
@@ -51,6 +58,12 @@ h3 {
   width: 936px;
 }
 
+#five-2 {
+  margin-top: 10px;
+  height: 850px;
+  width: 936px;
+}
+
 #woah {
   height: 620px;
   width: 936px;
@@ -58,6 +71,16 @@ h3 {
 
 #noah {
   height: 420px;
+  width: 936px;
+}
+
+#soah {
+  height: 240px;
+  width: 936px;
+}
+
+#ioah {
+  height: 130px;
   width: 936px;
 }
 

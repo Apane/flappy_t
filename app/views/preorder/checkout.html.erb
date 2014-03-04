@@ -1,18 +1,37 @@
-<div class="gray_background">
-  <div class="wrapper clearfix">
-    <div class="main_content <%= "payment_options" if Settings.use_payment_options %>">
-      <h3>Check out</h3>
-      <p>
-        All of your payment information will be secured and stored with Amazon Payments. If you don't have an Amazon account, simply select "I'm a new Customer" on the next page.
-        <br />
-        <br />
-        <% if Settings.use_payment_options %>
-          Select a payment option and enter your email address below.
-        <% else %>
-          Enter your email address below.
-        <% end %>
+<br />
+<div class="wrapper-cheq center">
+  <h2 class="mid">
+  <div>
+   <span class="font3"><%=image_tag 'getflahappy.png', alt: 'FLAPPY BIRD' %></span>
+  </div>
+ </h2>
+</div>
 
-      </p>
+
+ <div class="pull-mid">
+   <div class="row">
+     <div class="col-md-6">
+      <div class="leftside-cheq"
+      <div class="main_content">
+      <%=image_tag 'checking-placeholder.png' %>
+
+      <h5>Flappy comes with the game which is FREE to download from the iOS App Store and Google Play Store</h5>
+      <br />
+      <h5><strong>Product Details:</strong></h5>
+      <h5>- Flappy is 6.5 x 6 x 4 inches</h5>
+      <h5>- He weighs 6 ounces</h5>
+      <h5>- He supports <%= link_to 'these devices', '#' %> and runs on two AAA batteries</h5>
+      <h5>- Flappy rates (himself) 4.999 out of 5 stars</h5>
+     </div>
+    </div>
+
+     <div class="col-md-6">
+      <div class="rightside-cheq"
+      <div class="main_content <%= "payment_options" if Settings.use_payment_options %>">
+       <span class="font-cheq">I WANT 1 FLAPPY'S</span><br />
+       <span class="font-cheq">SHIP TO</span><br />
+       <span class="font-cheq">TOTAL</span>
+
       <%= form_tag "/preorder/prefill", :id => "checkout" do %>
         <%= render 'preorder/payment_options' %>
         <div class="checkout_controls">
@@ -21,12 +40,30 @@
               <%= email_field_tag "email", nil, :placeholder => "Email address", :required => "required", :id => "email" %>
               <%= hidden_field_tag "preorder", true %>
               <%= hidden_field_tag "quantity", params[:quantity] %>
-              <%= submit_tag "Checkout", :class => "blue_button", :id => "amazon_button" %>
+              <%= submit_tag "Checkout", :class => "blue_button reserve", :id => "amazon_button" %>
             </div>
           </div>
         </div>
       <% end %>
+
+      <p>
+       <br>
+       <h5> Your payment information will be stored and secure with Amazon Payments. If you don't have an Amazon account, simply select "I'm a new Customer" on the next page.</h5>
+       <br />
+        <h5><strong>Credit Card Notice</strong></h5>
+        <h5>Your card will only be charged if and when the project is successfully funded.</h5>
+        <h5><strong>Shipping</strong></h5>
+        <h5>The estimated shipping date is May 2014. (Given that the campaign is successfully funded)</h5>
+      </p>
+
+
     </div>
     <%= render 'preorder/checkout/sidebar' %>
+    </div>
+
   </div>
+
 </div>
+
+
+
