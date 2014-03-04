@@ -19,6 +19,7 @@ gem 'sass-rails',   '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
 gem 'bootstrap-wysihtml5-rails'
+gem "social-buttons", '~> 0.3'
 
 gem 'rspec-rails', '~> 2.0'
 gem 'shoulda'

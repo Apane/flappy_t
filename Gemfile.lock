@@ -132,6 +132,8 @@ GEM
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
     slop (3.4.7)
+    social-buttons (0.3.7)
+      rails (>= 3.0.0)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -178,5 +180,6 @@ DEPENDENCIES
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   shoulda
+  social-buttons (~> 0.3)
   thin
   uglifier (>= 1.0.3)

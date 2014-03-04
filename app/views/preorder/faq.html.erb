@@ -10,7 +10,9 @@
 
 <a href="#faq"></a>
 <div class="wrapper-faqs clearfix" id="faqs">
-    <h4>Flappy, the toy game controller:</h4>
+    <br />
+    <div class="left-faq">
+    <h4 class="first-faq-left">Flappy, the toy game controller:</h4>
     <ul>
       <li class=''>
         <details class=''>
@@ -53,8 +55,9 @@
           <p>Flappy requires two AAA batteries which last 1-2 years.</p>
         </details>
       </li>
-      The Game
-      <br /><br />
+      <br />
+      <h4 class="first-faq">The Game</h4>
+      <br />
        <li>
         <details class=''>
           <summary>What game does Flappy work with?</summary>
@@ -63,44 +66,100 @@
       </li>
        <li>
         <details class=''>
-          <summary>What is Flappy's battery life?</summary>
-          <p>Flappy requires two AAA batteries which last 1-2 years.</p>
+          <summary>Where do I download the game?</summary>
+          <p>The game will be available to download on the iOS App Store and Google Play Store.</p>
+        </details>
+      </li>
+       <li>
+        <details class=''>
+          <summary>When will the game be available?</summary>
+          <p>The game will be available by the time Flappy is shipped to you (estimated date: May 2014).</p>
+        </details>
+      </li>
+      <li>
+        <details class=''>
+          <summary>How much does the game cost?</summary>
+          <p>The game will be free.</p>
+        </details>
+      </li>
+      <li>
+        <details class=''>
+          <summary>How do I play on the TV?</summary>
+          <p>By connecting your device to the TV using an HDMI adapter and cable, which you can get on Amazon and at most electronic stores.</p>
         </details>
       </li>
     </ul>
-    <h4>Ordering and Shipping:</h4>
+  </div>
+    <div class="right-faq">
+    <h4 class="first-faq-right">Ordering and Shipping:</h4>
     <ul class='col2'>
       <li>
         <details class=''>
-          <summary>How do I change the CSS?</summary>
-          <p>Head over to <code>app/assets/stylesheets/variables.css.scss</code>. It makes it easy to change around the elements used throughout the HTML.
-          <br />
-          <br />
-          Alternatively, you can dive right into the CSS, have a look at <code>app/assets/stylesheets/main.css.scss</code>.</p>
+          <summary>When will Flappy be shipped to me?</summary>
+          <p>If the project is successfully funded, Flappy's estimae shipping date is May 2014.</p>
         </details>
       </li>
       <li class=''>
         <details class=''>
-          <summary>Why did you release this?</summary>
-          <p>Hardware startups are less welcome on Kickstarter than they were 6 months ago. We needed to roll our own kickstarter, so we did. Other hardware startups probably will too, so we made it easier for them by open sourcing our way of doing it.</p>
+          <summary>Do you accept international orders?</summary>
+          <p>Yes we do.</p>
         </details>
       </li>
       <li class=''>
         <details class=''>
-          <summary class=''>What software stack does this use?</summary>
-          <p>It's a Ruby on Rails app that makes heavy use of SCSS, Kickstarter's wonderful <code>amazon_flex_pay</code> gem, and a hint of CoffeeScript.</p>
+          <summary class=''>How much does shipping cost?</summary>
+          <p>Shipping within the United States is $4.95.</p>
+          <p>Shipping to Canada is $4.95.</p>
+          <p>Shipping to all other countries is $12.95.</p>
         </details>
       </li>
       <li class=''>
         <details class=''>
-          <summary class=''>How do I deploy it?</summary>
-          <p>We recommend using Heroku. We include a Procfile for you, so all you need to do is:
-          <p>
-            <p>Install the <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a></p>
-            <p>Run <code>heroku create</code> in Selfstarter's folder</code></p>
-            <p>Run <code>git push heroku master</code> in Selfstarter's folder</p>
-          </p>
+          <summary class=''>When will my credit card be changed?</summary>
+            <p>Your credit card will be charged when the project is successfully funded. If the project is not successfully funded, your card will not be charged.</p>
         </details>
-      </li>
+        </li>
+        <li class=''>
+        <details class=''>
+          <summary class=''>Am I only charged if the project is successfully funded?</summary>
+            <p>Yes, you will only be charged if the project is successfully funded.</p>
+        </details>
+        </li>
+        <br />
+       <h4 class="first-faq">Crowdfunding Campaign</h4>
+       <br />
+        <li class=''>
+        <details class=''>
+          <summary class=''>How does this crowdfunding campaign work?</summary>
+            <p>We have 30 days to raise at least $25,000 for this project and for you to get Flappy. We need your help to raise this money! You can help by placing an order for Flappy, and by telling your friends to do the same.</p>
+        </details>
+        </li>
+        <li class=''>
+        <details class=''>
+          <summary class=''>What will the corwdfunding campaign funds be used for?</summary>
+            <p>The campaign funds will be used to finish development of the game and to cover the minimum run required for production.</p>
+        </details>
+        </li>
+       <br />
+       <h4 class="first-faq">About Flappy's Makers:</h4>
+       <br />
+       <li class=''>
+        <details class=''>
+          <summary class=''>Who are the people behind this project?</summary>
+            <p><%=link_to 'Brian and Jenn.', about_path %></p>
+        </details>
+        </li>
+       <li class=''>
+        <details class=''>
+          <summary class=''>How do I contact you?</summary>
+            <p>Send us an email: contact@zowpow.com</p>
+        </details>
+        </li>
+      </div>
     </ul>
 </div>
+
+<%= render 'preorder/homepage/middle_faq' %>
+
+
+

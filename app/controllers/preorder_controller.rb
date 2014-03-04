@@ -13,6 +13,9 @@ class PreorderController < ApplicationController
   def faq
   end
 
+  def flappystory
+  end
+
   def prefill
     @user = User.find_or_create_by(:email => params[:email])
 
