@@ -1,12 +1,8 @@
 #reserve_container
 {
   padding-top: 50px;
-  border-top: 1px solid #fff;
-  -moz-box-shadow:    0 -1px 0 #cbcbcb; /* drop shadow */
-  -webkit-box-shadow: 0 -1px 0 #cbcbcb; /* drop shadow */
-  box-shadow:         0 -1px 0 #cbcbcb; /* drop shadow */
-  margin-top: 50px;
   text-align: center;
+  padding-top: 5px;
   p
   {
     color: #8b8a8a;
@@ -39,9 +35,126 @@
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding: 5px 0;
+    padding: 2px 0;
     width: 310px;
     font-size: 32px;
+}
+
+.reserve:active {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 310px;
+    font-size: 32px;
+    color: #F9C338;
+    text-decoration: none;
+}
+
+.reserve-big-blue {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 490px;
+    font-size: 70px;
+    color: #F9C338;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+    letter-spacing: 3px;
+}
+
+
+.reserve-big-blue:hover {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 490px;
+    font-size: 70px;
+    color: #F9C338;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+    letter-spacing: 3px;
+}
+
+.reserve-big-blue:active {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 490px;
+    font-size: 70px;
+    color: #F9C338;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+    letter-spacing: 3px;
 }
 
 .reserve-big {
@@ -56,9 +169,9 @@
 
 #middle_reserve
 {
-  padding: 60px;
+  padding: 10px;
   h2
   {
-    margin-bottom: 26px;
+    margin-bottom: -15px;
   }
 }

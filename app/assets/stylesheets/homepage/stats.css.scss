@@ -31,8 +31,8 @@
     text-align: center;
     span
     {
-      color: #868686;
-      font-size: 18px;
+      color: black;
+      font-size: 14px;
       margin-top: 5px;
       display: block;
       font-family: $primary_font, $secondary_font, $tertiary_font;
@@ -50,7 +50,6 @@ body.lt-ie9
 #progress_bg
 {
   margin-top: 20px;
-  float: left;
   height: 40px;
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,.41); /* drop shadow */
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.41); /* drop shadow */
@@ -61,7 +60,7 @@ body.lt-ie9
   width: 325px;
   background: #dbdbdb;
   padding: 22px;
-    border-top: 2px solid black;
+  border-top: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
@@ -108,3 +107,30 @@ body.lt-ie9
     height: 20px !important;
   }
 }
+
+ .stats-bottom {
+    color: #F7931E;
+    margin: 0 auto;
+    font-size: 30px;
+    display: block;
+    display: inline-block;
+    font-family: 'boxyfont', $secondary_font, $tertiary_font;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    width: 500px;
+     span
+    {
+      color: black;
+      font-size: 14px;
+      display: block;
+      font-family: $primary_font, $secondary_font, $tertiary_font;
+    }
+  }
+
+#backing #days-bottom {
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 900px;
+}
+
