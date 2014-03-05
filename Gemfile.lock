@@ -1,4 +1,25 @@
 GIT
+  remote: git://github.com/ernie/ransack.git
+  revision: 155dca814b4f09af4eb3715c8402522c32ab3daa
+  branch: rails-4
+  specs:
+    ransack (1.1.0)
+      actionpack (>= 4.0)
+      activerecord (>= 4.0)
+      activesupport (>= 4.0)
+      i18n
+      polyamorous (~> 0.6.0)
+
+GIT
+  remote: git://github.com/ernie/squeel.git
+  revision: 2c4f90511d811032d8927028aa99343d2f9127b4
+  specs:
+    squeel (1.1.1)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      polyamorous (~> 0.6.0)
+
+GIT
   remote: git://github.com/heroku/rails3_serve_static_assets.git
   revision: 84910ceb4ca2851d650e66d3b22f5008acf253f8
   specs:
@@ -9,6 +30,14 @@ GIT
   revision: 01b5bcc572e3baed1618f4068920dd83bd491fb2
   specs:
     rails_log_stdout (0.0.1)
+
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: d92b48d5a60449736805c86e1c9c8d5a915aafc0
+  specs:
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
 
 GEM
   remote: https://rubygems.org/
@@ -55,6 +84,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
+    dalli (2.7.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -79,6 +109,8 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     pg (0.17.0)
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
     polyglot (0.3.3)
     protected_attributes (1.0.2)
       activemodel (>= 4.0.0.beta, < 5.0)
@@ -166,6 +198,7 @@ DEPENDENCIES
   amazon_flex_pay
   bootstrap-wysihtml5-rails
   coffee-rails (~> 4.0.0)
+  dalli
   figaro
   jquery-rails
   jquery-ui-rails
@@ -173,13 +206,16 @@ DEPENDENCIES
   pg
   protected_attributes
   pry-rails
-  rails (= 4.0.0)
+  rails (~> 4.0.0)
   rails3_serve_static_assets!
   rails_config
   rails_log_stdout!
+  ransack!
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.0)
   shoulda
+  simple_form!
   social-buttons (~> 0.3)
+  squeel!
   thin
   uglifier (>= 1.0.3)

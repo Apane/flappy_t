@@ -2,7 +2,14 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '4.0.0'
+gem "rails", '~>4.0.0'
+# Remember to require dalli if you're using memcached
+gem 'dalli'
+# Remember to update any gems that require something special in order to work with Rails 4
+gem 'squeel', :git => "git://github.com/ernie/squeel.git"
+gem "ransack", :git => "git://github.com/ernie/ransack.git", :branch => 'rails-4'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+
 gem 'json', '~> 1.7.7'
 gem 'pry-rails'
 
