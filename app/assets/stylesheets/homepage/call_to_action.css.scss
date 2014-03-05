@@ -1,0 +1,177 @@
+#reserve_container
+{
+  padding-top: 50px;
+  text-align: center;
+  padding-top: 5px;
+  p
+  {
+    color: #8b8a8a;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  #ship_date
+  {
+    color: #4c4c4c !important;
+    font-size: 22px;
+    font-family: 'noteworthy';
+    line-height: 1.3;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    font-weight: bold;
+  }
+  #price
+  {
+    color: #4c4c4c;
+    font-size: 22px;
+    font-family: $primary_font, $secondary_font, $tertiary_font;
+    line-height: 1.3;
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 300px;
+  }
+}
+.reserve {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 310px;
+    font-size: 32px;
+}
+
+.reserve:active {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 310px;
+    font-size: 32px;
+    color: #F9C338;
+    text-decoration: none;
+}
+
+.reserve-big-blue {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 490px;
+    font-size: 70px;
+    color: #F9C338;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+    letter-spacing: 3px;
+}
+
+
+.reserve-big-blue:hover {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 490px;
+    font-size: 70px;
+    color: #F9C338;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+    letter-spacing: 3px;
+}
+
+.reserve-big-blue:active {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2px 0;
+    width: 490px;
+    font-size: 70px;
+    color: #F9C338;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+    letter-spacing: 3px;
+}
+
+.reserve-big {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    width: 310px;
+    font-size: 32px;
+    padding: 18px;
+}
+
+#middle_reserve
+{
+  padding: 10px;
+  h2
+  {
+    margin-bottom: -15px;
+  }
+}
