@@ -133,4 +133,28 @@ body.lt-ie9
     margin: 0 auto;
     width: 900px;
 }
-
+#progress_bg #progress {
+    background:#3fafb2;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 5px;
+    min-width: 2%;
+    width: 100%;
+    max-width: 100%;
+    display: inline-block;
+    margin:-15px 0 0 -15px;
+}
+#progress_text {
+    color: #F9C338;
+    font-size: 24px;
+    font-family: "boxyfont",  "ProximaNovaBold",  "Arial";
+    margin: -37px 0 0 245px;
+    text-shadow: none;
+}
+.small {
+    height: 20px !important;
+    background-color: #3FAFB2;
+}
+.small #progress {
+    height: 31px !important;
+}

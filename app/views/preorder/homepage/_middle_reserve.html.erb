@@ -1,17 +1,24 @@
-<div class="big_wrapper-points">
-  <div class="wrapper-points center" id="middle_reserve">
+<div class="big_wrapper-points wrapper">
+  <div class="wrapper-points center " id="middle_reserve">
     <h2 class="font-reserve">I WANT FLAPPY!</h2>
     <h2 class="font-reserve">HOW DO I GET FLAPPY?</h2>
     <br />
-    <a href="/preorder/checkout" class="big-blue_button reserve-big-blue"><%= Settings.middle_reserve_text %></a>
-     <div class="social-buttons-bottom">
-    <%= link_to 'Share on Facebook', '', class: "zocial facebook" %>
-    <div class="zocial twitter"><%= tweet_button %></div>
+
+
+    <div class="steptext stepone">Step 1</div><a href="preorder/checkout.html" class="big-blue_button reserve-big-blue" id="homebottombutton">GET FLAPPY</a>
+     <div class="steptext">Step 2</div><div class="social-buttons-bottom">
+    <a class="zocial facebook" href="">Share on Facebook</a>
+    <div class="zocial twitter"><a href='https://twitter.com/share?url=/' id='tweet_button' class='twitter-share-button twitter-button' data-url='http//flappytoy.herokuapp.com' data-via='Flappy, the toy game controller' data-lang='en' data-count='vertical' data-text="I'm backer number 1 to crowdfund!">Share on Twitter</a></div>
   </div>
   </div>
-</div>
+
+</div><div id="ribbonwrap"></div>
+
 
 <div class="wrapper" id="four">
+ <div class="pull-left" id="left-sam" style="margin-left:50px;">
+    <img alt="Uncle sam" src="assets/uncle-sam-b959def602c6fea5300eab94a250f631.png" />
+  </div>
   <p class="first-p" id="space">
     <h2 class="first">
     Remember, only with your support
@@ -22,25 +29,35 @@
   </p>
 
 
- <div id="backing">
-    <ul>
-      <% if Settings.expiration_date.present? %>
-        <li class="stats-bottom" id="days-bottom">
-          <%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\D/, "") %>
-          <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
-        </li>
-      <% else %>
-        <li class="stats-bottom" id="days-bottom">
-            &infin;
-            <span>days left</span>
-          </li>
-      <% end %>
-    </ul>
+<div id="backing">
+<% if Order.revenue.to_f < Order.goal.to_f %>
+ <div id="bottomprogress" style=" margin-left: 400px; margin-top:40px">
+ <li class="stats" id="days" style="float:left; margin-left:-80px; margin-top:7px;line-height: .8;">
+
+<% if Settings.expiration_date.present? %>
+  <%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\D/, "") %>
+  <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
+   <% else %>
+   &infin;
+  <span>days left</span>
+  <% end %>
+
+  <div id='progress_bg' class='small bottomprogress'>
+    <div id='progress' class='' style='<%= Order.percent %>%;'>
+    </div>
+  </div>
+ </li>
+ <% else %>
+   <div id='progress_bg' class='small bottomprogress'>
+   <div id='progress' class='' style='<%= Order.percent %>%;'>
+   </div>
+  <div id='progress_text' ><%= Order.percent %>% <%= Settings.progress_text %></div>
+  </div>
+  <% end %>
+  </div>
  </div>
 
 
-  <div class="pull-left" id="left-sam">
-    <%= image_tag 'uncle-sam.png' %>
-  </div>
+
 
 </div>
