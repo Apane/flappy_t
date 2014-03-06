@@ -9,6 +9,15 @@ Selfstarter =
     else
       $("#email").addClass("highlight") unless Selfstarter.firstTime
       $("#amazon_button").addClass("disabled") unless $("#amazon_button").hasClass("disabled")
+
+  bindGiftCheckbox: ->
+    $("#gift").change ->
+      val = $(this).is(":checked")
+      if val
+        $("#gift-form-section").removeClass("hidden")
+      else
+        $("#gift-form-section").addClass("hidden")
+
   init: ->
     checkoutOffset = $('body').height() - $('.footer').outerHeight() #needs to be done upon init
 
@@ -19,6 +28,9 @@ Selfstarter =
     # The first time they type in their email, we don't want it to throw a validation error
     $("#email").change ->
       Selfstarter.firstTime = false
+
+    # Bind gift checkbox
+    Selfstarter.bindGiftCheckbox()
 
     # init placeholder image for video
     $("#video_image").on "click", ->

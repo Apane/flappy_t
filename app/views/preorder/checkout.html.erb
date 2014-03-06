@@ -48,7 +48,7 @@
       </span>
       <br /><br />
 
-      <div id="gift-form-section">
+      <div id="gift-form-section" class="<%= @gift ? '' : 'hidden' %>">
         <div class="font-cheq clearfix">
           To:
           <%= text_field_tag :to_name, nil, :class => "forminput topinput", :placeholder => "Name" %>
