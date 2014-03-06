@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130107010733) do
+ActiveRecord::Schema.define(version: 20140306193118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gift_infos", force: true do |t|
+    t.string   "from_name"
+    t.string   "from_email"
+    t.string   "to_name"
+    t.string   "to_email"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "note"
+  end
 
   create_table "orders", id: false, force: true do |t|
     t.string   "token"
