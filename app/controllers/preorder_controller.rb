@@ -6,6 +6,7 @@ class PreorderController < ApplicationController
   end
 
   def checkout
+    @gift = (params[:gift] == "1")
   end
 
   def aboutus
