@@ -4,7 +4,7 @@
       Meet Flappy.
     </h3>
      <p class="first-p" id="space">
-       He's not an ordinary plush toy, he can fly! (well, kind of)
+       He's no ordinary plush toy, he can fly! (well, kind of)
      <p>
 
     <div class="center">
@@ -51,7 +51,6 @@
     <%= image_tag 'difficult.gif' %>
   </div>
 
-
 </div>
 
 <div class="wrapper" id="four">
@@ -96,10 +95,10 @@
 
   <h3 class="first"> OK, seriously.</h3>
 
-  <h3 class="first">What is a Flappy Toy game controller?</h3>
+  <h3 class="first">What is Flappy, the toy game controller?</h3>
 
   <br />
-  <p class="first-p">Flappy is a plush toy that controls the game on your phone or tablet. ‘The game’ is our version of the beloved ‘Flappy Bird’ by Dong Nguyen. To make Flappy fly in the game, you lift up Flappy (the toy)
+  <p class="first-p-wide">Flappy is a plush toy that controls the game on your phone or tablet. ‘The game’ is our version of the beloved ‘Flappy Bird’ by Dong Nguyen. To make Flappy fly in the game, you lift up Flappy (the toy)
   </p>
 
   <div class="center" id="space"></div>
@@ -124,7 +123,7 @@
 
 
       <div class="center" id="space">
-        <%= image_tag 'flappy-connect.png' %>
+        <%= image_tag 'flappy-iphone-ipad.png', size: "500x200" %>
       </div>
 
   <p class="first-p">Simply launch the game and bring Flappy near your device. Flappy connects automatically. Yep, kind of like magic. Now you’re ready to play!</p>
@@ -134,10 +133,19 @@
   <div class="center" id="space"></div>
   <div class="center" id="space"></div>
 
+
+  <h3 class="first">
+    Where do I get the game?
+  </h3>
+  <p class="first-p">The game will be FREE to download from the iOS App Store and Google Play Store.</p>
+
+  <div class="center" id="space"></div>
+  <div class="center" id="space"></div>
+
   <h3 class="first">
     Which devices does Flappy support?
   </h3>
-  <p class="first-p">Most (newer) iOS and Android devices. <%= link_to 'Here’s the full list.', '#' %></p>
+  <p class="first-p">Most (newer) iOS and Android devices. <%= link_to 'See the full list in our faq.', faq_path %></p>
 
   <div class="center" id="space"></div>
   <div class="center" id="space"></div>
@@ -145,7 +153,7 @@
   <h3 class="first">
     Do you have more pictures of Flappy?
   </h3>
-  <p class="first-p">Of course. <%= link_to 'Flappy loves Selfies.', '#' %></p>
+  <p class="first-p">Of course. <%= link_to 'Flappy loves Selfies.', 'http://instagram.com/flappythetoy#' %></p>
 
   <div class="center" id="space"></div>
   <div class="center" id="space"></div>
@@ -153,7 +161,7 @@
   <h3 class="first">
     I have a question. What do I do?
   </h3>
-  <p class="first-p">Check our <%= link_to 'FAQs.', '#' %></p>
+  <p class="first-p">Check our <%= link_to 'FAQs.', faq_path %></p>
 
   <div class="center" id="space"></div>
   <div class="center" id="space"></div>
@@ -161,7 +169,7 @@
   <h3 class="first">
     Who are you?
   </h3>
-  <p class="first-p"><%= link_to 'Two lost souls.', '#' %></p>
+  <p class="first-p"><%= link_to 'Two lost souls.', about_path %></p>
 
 </div>
 

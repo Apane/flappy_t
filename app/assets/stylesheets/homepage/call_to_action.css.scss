@@ -8,6 +8,9 @@
     color: #8b8a8a;
     font-size: 18px;
     line-height: 1.4;
+    margin: -5px;
+    padding-bottom: 10px;
+
   }
   #ship_date
   {
@@ -19,6 +22,7 @@
     margin: 0 auto;
     width: 300px;
     font-weight: bold;
+    margin-bottom: 20px;
   }
   #price
   {
@@ -32,12 +36,13 @@
   }
 }
 .reserve {
-    margin: 0 auto;
-    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 2px 0;
     width: 310px;
-    font-size: 32px;
 }
 
 .reserve:active {
