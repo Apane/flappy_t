@@ -1,5 +1,5 @@
 class GiftInfo < ActiveRecord::Base
-  belongs_to :order
+  belongs_to :order, :foreign_key => :uuid
 
   def from
     self.from_name || self.from_email

@@ -44,8 +44,6 @@ class PreorderController < ApplicationController
       info.note       = params[:note]
       info.order_id   = @order.id
       info.save!
-
-      GiftMailer.notify(info).deliver!
     end
 
     # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
@@ -66,6 +64,7 @@ class PreorderController < ApplicationController
     end
     # "A" means the user cancelled the preorder before clicking "Confirm" on Amazon Payments.
     if params['status'] != 'A' && @order.present?
+      send_emails!(@order)
       redirect_to :action => :share, :uuid => @order.uuid
     else
       redirect_to root_url
@@ -77,5 +76,16 @@ class PreorderController < ApplicationController
   end
 
   def ipn
+  end
+
+  private
+
+  def send_emails!(order)
+    info = order.gift_info
+
+    if info.present?
+      GiftMailer.confirm(info).deliver!
+      GiftMailer.notify(info).deliver!
+    end
   end
 end
