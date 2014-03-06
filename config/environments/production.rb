@@ -69,9 +69,9 @@ Selfstarter::Application.configure do
   config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
-      domain:               'zowpow.com',
-      user_name:            'flappytoy',
-      password:             '9>eJCLuS',
+      domain:               'gmail.com',
+      user_name:            'flappytoy@zowpow.com',
+      password:             '7>eJCLuS',
       authentication:       'plain',
       enable_starttls_auto: true
   }
