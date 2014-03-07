@@ -42,7 +42,10 @@
             <% end %>
           </select>
        <br /><br />
-       <span class="font-cheq">TOTAL</span><div class="forminput" style="margin-right: 270px; width: 80px;"><%= "%.2f" % Settings.price %></div>
+       <span class="font-cheq">TOTAL</span>
+       <div id="totalprice" class="forminput" style="margin-right: 270px; width: 80px;">
+        $<%= "%.2f" % Settings.price %>
+       </div>
        <br /><br />
 
       <span class="font-cheq">
