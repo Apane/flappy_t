@@ -28,6 +28,7 @@ value_proposition: "We (hate) love Flappy Bird so much we made a Flappy Toy game
 # Replace /embed/ in your video url path with /v/ for video playback to work.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 video_embed_url: "https://youtube.googleapis.com/v/0DgYM9blFa4"
 =======
@@ -36,6 +37,9 @@ video_embed_url: "http://youtu.be/0DgYM9blFa4"
 =======
 video_embed_url: "http://www.youtube.com/watch?v=0DgYM9blFa4&feature=youtu.be"
 >>>>>>> added video
+=======
+video_embed_url: "http//www.youtube.com/v/0DgYM9blFa4"
+>>>>>>> fixed video
 
 # If set to true, then the image at "/assets/video_placeholder.png" will be shown in place of the youtube
 # video.  When the user clicks it, the vid will replace the image and start playing.
