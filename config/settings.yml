@@ -33,6 +33,7 @@ value_proposition: "We (hate) love Flappy Bird so much we made a Flappy Toy game
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 video_embed_url: "https://youtube.googleapis.com/v/0DgYM9blFa4"
 =======
@@ -55,6 +56,9 @@ video_embed_url: "https//www.youtube.com/v/0DgYM9blFa4"
 >>>>>>> youtubefix
 =======
 video_embed_url: "www.youtube.com/v/0DgYM9blFa4"
+>>>>>>> updated keys + video
+=======
+video_embed_url: "https://youtube.googleapis.com/v/0DgYM9blFa4"
 >>>>>>> updated keys + video
 
 # If set to true, then the image at "/assets/video_placeholder.png" will be shown in place of the youtube
