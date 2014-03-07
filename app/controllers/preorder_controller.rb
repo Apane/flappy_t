@@ -30,7 +30,12 @@ class PreorderController < ApplicationController
       price = Settings.price
     end
 
-    @order = Order.prefill!(:name => Settings.product_name, :price => price, :user_id => @user.id, :payment_option => payment_option)
+    @order = Order.prefill!(
+      :name => Settings.product_name,
+      :price => calculate_price(price),
+      :user_id => @user.id,
+      :payment_option => payment_option
+    )
 
     # Check for gift settings,
     # sending email notification if valid
@@ -52,8 +57,8 @@ class PreorderController < ApplicationController
     port = Rails.env.production? ? "" : ":3000"
     callback_url = "#{request.scheme}://#{request.host}#{port}/preorder/postfill"
     redirect_to AmazonFlexPay.multi_use_pipeline(@order.uuid, callback_url,
-                                                 :transaction_amount => price,
-                                                 :global_amount_limit => price + Settings.charge_limit,
+                                                 :transaction_amount => @order.price.to_f,
+                                                 :global_amount_limit => @order.price.to_f + Settings.charge_limit,
                                                  :collect_shipping_address => "False",
                                                  :payment_reason => Settings.payment_description)
   end
@@ -79,6 +84,13 @@ class PreorderController < ApplicationController
   end
 
   private
+
+  def calculate_price(unit_price)
+    units = params[:quantity].try(:to_i) || 0 # default to 0
+    locale = params[:shippingoptions] || "United States"
+    shipping = Order::SHIPPING_COST[locale]
+    (unit_price.to_f * units) + shipping
+  end
 
   def send_emails!(order)
     info = order.gift_info

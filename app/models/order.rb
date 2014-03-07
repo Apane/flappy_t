@@ -6,6 +6,12 @@ class Order < ActiveRecord::Base
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
   self.primary_key = 'uuid'
 
+  SHIPPING_COST = {
+    "United States" => 4.95,
+    "Canada"        => 7.95,
+    "International" => 12.95
+  }
+
   # This is where we create our Caller Reference for Amazon Payments, and prefill some other information.
   def self.prefill!(options = {})
     @order                = Order.new

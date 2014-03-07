@@ -41,7 +41,7 @@ use_video_placeholder: true
 # To find your access key and secret key, head over to here --> http://bit.ly/R4I4ky (Follow that guide in the Seller Central page)
 amazon_access_key: "AKIAJZLGMY3KXLGCIDLQ"
 amazon_secret_key: "cMboCWPr9FDWIXgWwIYAHZheZWLiFVegI6bLJbef"
-price: 	19.95
+price: 	15.00
 
 # if use_payment_options is set to true, then a set of radio buttons will be displayed with various payment options.
 # There is a PaymentOption model for storing info about payment options.  To set up your payment options you should

@@ -31,15 +31,18 @@
       <div class="rightside-cheq"
       <div class="main_content ">
       <form accept-charset="UTF-8" action="/preorder/prefill" id="checkout" method="post"><div style="margin:0;padding:0;display:inline">
-       <span class="font-cheq">I WANT <input id="quantity" name="quantity" style="width: 100px;float: none; "/> FLAPPY'S</span><br /><br />
+       <span class="font-cheq">I WANT <input id="quantity" name="quantity" value="1" style="width: 100px;float: none; "/> FLAPPY'S</span><br /><br />
        <span class="font-cheq">SHIP TO</span>
           <select name="shippingoptions" id="shippingoptions">
-            <option value="USA">United States - FREE!</option>
-            <option value="CA">Canada - $4.99</option>
-            <option value="UK">United Kingdom - $4.99</option>
+            <% Order::SHIPPING_COST.each do |locale, price| %>
+              <option value="<%= locale %>">
+                <%= locale %> -
+                <%= "$" + price.to_f.round(2).to_s %>
+              </option>
+            <% end %>
           </select>
        <br /><br />
-       <span class="font-cheq">TOTAL</span><div class="forminput" style="margin-right: 270px; width: 80px;">$15.99</div>
+       <span class="font-cheq">TOTAL</span><div class="forminput" style="margin-right: 270px; width: 80px;"><%= "%.2f" % Settings.price %></div>
        <br /><br />
 
       <span class="font-cheq">
