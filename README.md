@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Selfstarter
 Selfstarter makes it easy to roll your own crowdfunding site. To get started, fork this repository and change around ```config/settings.yml``` to suit your needs.
 
@@ -101,3 +102,7 @@ Amazon Payments works great for us, but it may not work out for everyone. If you
 There aren't any tests yet. Tests are very welcome!
 
 
+=======
+flappy_t
+========
+>>>>>>> FETCH_HEAD
