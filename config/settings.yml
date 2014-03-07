@@ -31,6 +31,7 @@ value_proposition: "We (hate) love Flappy Bird so much we made a Flappy Toy game
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 video_embed_url: "https://youtube.googleapis.com/v/0DgYM9blFa4"
 =======
@@ -48,6 +49,9 @@ video_embed_url: "https//www.youtube.com/v/0DgYM9blFa4"
 =======
 video_embed_url: "https://www.youtube.com/v/D1L3o88GKew"
 >>>>>>> video replacement test
+=======
+video_embed_url: "https//www.youtube.com/v/0DgYM9blFa4"
+>>>>>>> youtubefix
 
 # If set to true, then the image at "/assets/video_placeholder.png" will be shown in place of the youtube
 # video.  When the user clicks it, the vid will replace the image and start playing.
