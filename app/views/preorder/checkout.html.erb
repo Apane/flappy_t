@@ -12,14 +12,14 @@
 
  <div class="pull-mid">
    <div class="row">
-     <div class="col-md-6"  style="width: 483px;margin-left:-1px;">
+     <div class="col-md-6"  style="width: 483px;margin-left:-1px; float:left;">
       <div class="leftside-cheq"
       <div class="main_content">
-      <%=image_tag 'flappy1.jpg', size: '391x275' %>
+      <div class="imgbig"><%=image_tag 'flappy1.jpg', size: '391x275' %></div>
 
-      <div class="thumbnailcurrent"><%=image_tag 'flappy1.jpg', size: '120x87'%></div>
-      <div class="thumbnails"><%=image_tag 'flappy2.jpg', size: '120x87'%></div>
-      <div class="thumbnails"><%=image_tag 'flappy3.jpg', size: '120x87'%></div>
+      <div class="imgthumb thumbnailcurrent" data-id="1"><%=image_tag 'flappy1.jpg', size: '120x87'%></div>
+      <div class="imgthumb thumbnails" data-id="2"><%=image_tag 'flappy2.jpg', size: '120x87'%></div>
+      <div class="imgthumb thumbnails" data-id="3"><%=image_tag 'flappy3.jpg', size: '120x87'%></div>
       <br />
       <h5 style="margin-top: 17px;"><br /><br /><br /><br /><br />Flappy comes with the game which will be FREE to download from the iOS App Store and Google Play Store</h5>
       <br />
@@ -31,7 +31,7 @@
      </div>
     </div>
 
-     <div class="col-md-6" style="width: 520px;margin-left:-50px;">
+     <div style="width: 520px; float:right; margin-right:0px; margin-top: -652px;">
       <div class="rightside-cheq"
       <div class="main_content ">
       <form accept-charset="UTF-8" action="/preorder/prefill" id="checkout" method="post"><div style="margin:0;padding:0;display:inline">
