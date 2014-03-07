@@ -15,9 +15,13 @@
      <div class="col-md-6"  style="width: 483px;margin-left:-1px;">
       <div class="leftside-cheq"
       <div class="main_content">
-      <%=image_tag 'checking-placeholder.png' %>
+      <%=image_tag 'flappy1.jpg', size: '391x275' %>
 
-      <h5>Flappy comes with the game which is FREE to download from the iOS App Store and Google Play Store</h5>
+      <div class="thumbnailcurrent"><%=image_tag 'flappy1.jpg', size: '120x87'%></div>
+      <div class="thumbnails"><%=image_tag 'flappy2.jpg', size: '120x87'%></div>
+      <div class="thumbnails"><%=image_tag 'flappy3.jpg', size: '120x87'%></div>
+      <br />
+      <h5 style="margin-top: 17px;"><br /><br /><br /><br /><br />Flappy comes with the game which is FREE to download from the iOS App Store and Google Play Store</h5>
       <br />
       <h5><strong>Product Details:</strong></h5>
       <h5>- Flappy is 6.5 x 6 x 4 inches</h5>
@@ -40,8 +44,8 @@
                 <%= "$" + price.to_f.round(2).to_s %>
               </option>
             <% end %>
-          </select>
-       <br /><br />
+          </select><br/>
+       <br /><br />Share with Facebook or Twitter to get free U.S. shipping:&nbsp;&nbsp;&nbsp;<%=image_tag 'facebook.png' %>&nbsp;&nbsp;&nbsp;<%=image_tag 'twitter.png' %><br/><br/>
        <span class="font-cheq">TOTAL</span>
        <div id="totalprice" class="forminput" style="margin-right: 270px; width: 80px;">
         $<%= "%.2f" % Settings.price %>
@@ -71,12 +75,14 @@
           Note:
           <%= text_area_tag :note, nil, :class => "forminput", :rows => 5 %>
         </div>
-      </div>
+        <br/>
+       <h5 style="text-align: center; margin-top:10px;">Once you click ‘Checkout with Amazon’, we'll notify your friend.  Their shipping address will be collected once the campaign is completed .
+      </h5></div>
 
       <input name="utf8" type="hidden" value="&#x2713;" />
       <input name="authenticity_token" type="hidden" value="eHN/nv4yb3/Kk3Cy2NDLOJOCWzv7CWS/YAFopWAMHIg=" /></div>
 
-        <div class="checkout_controls">
+        <div class="checkout_controls" style="margin-top:-20px;">
           <div class="checkout_controls_wrapper">
             <div class="checkout_controls_inner">
 
@@ -87,9 +93,8 @@
         </div>
     </form>
 
-      <p>
-       <br>
-       <h5> Your payment information will be stored and secure with Amazon Payments. If you don't have an Amazon account, simply select "I'm a new Customer" on the next page.</h5>
+      <p style="margin-top:-20px;">
+       <h5 style="text-align:center;"> Your payment information will be stored and secure with Amazon Payments. If you don't have an Amazon account, simply select "I'm a new Customer" on the next page.</h5>
        <br />
         <h5><strong>Credit Card Notice</strong></h5>
         <h5>Your card will only be charged if and when the project is successfully funded.</h5>
@@ -105,6 +110,43 @@
   </div>
 
 </div>
+
+<br/><br/>
+
+
+<div id="backing" style="margin-left:240px; text-align: center;">
+<p class="first" style="text-align:center; margin-left: 280px; width: 500px; font-size:30px; text-shadow:none; color:#fff;">Getting there!</p>
+<% if Order.revenue.to_f < Order.goal.to_f %>
+ <div id="bottomprogress" style=" margin-left: 400px; margin-top:20px">
+ <li class="stats statsbg" id="days" style="float:left; margin-left:-80px; margin-top:7px;line-height: .8; text-align:left; color: #fff; font-size: 34px;">
+
+<% if Settings.expiration_date.present? %>
+  <%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\D/, "") %>
+  <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
+   <% else %>
+   &infin;
+  <span style="margin-left: -120px; ">days left</span>
+  <% end %>
+
+  <div id='progress_bg' class='small bottomprogressbg'>
+    <div id='progress' class='bottomprogress' style='width: <%= Order.percent %>%; float:left'>
+    </div><div id='progress_text' style="float: left; margin-top: -7px;"><%= Order.percent %>% <%= Settings.progress_text %></div>
+  </div>
+ </li>
+ <% else %>
+   <div id='progress_bg' class='small bottomprogressbg'>
+   <div id='progress' class='bottomprogress' style='width: <%= Order.percent %>%; '>
+   </div><div id='progress_text' style="float: left; margin-top: -7px;"><%= Order.percent %>% <%= Settings.progress_text %></div>
+  </div>
+  <% end %>
+  </div>
+ </div>
+
+
+
+
+</div><br/><br/><br/><br/><br/><br/>
+
 
 
 

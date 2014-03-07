@@ -1,0 +1,55 @@
+<%= render 'preorder/header_other' %>
+
+<div style="width: 960px; margin:auto; text-align: center;">
+<br />
+<br/><br/><br />
+<br/>
+<br/><br/><br /><div style="width: 274px; margin:auto;">
+<%= image_tag 'thanks.png', size: "274x70" %>
+</div><br/><br/><br />
+
+<p class="first" style="text-align:center; width: 250px; font-size:30px; text-shadow:none; color:#fff;">We're getting there.</p>
+<div id="backing" style="margin-left:160px; text-align: center;">
+
+<% if Order.revenue.to_f < Order.goal.to_f %>
+ <div id="bottomprogress" style=" margin-left: 180px; margin-top:20px">
+ <li class="stats statsbg" id="days" style="float:left; margin-left:-80px; margin-top:7px;line-height: .8; text-align:left; color: #fff; font-size: 34px;">
+
+<% if Settings.expiration_date.present? %>
+  <%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\D/, "") %>
+  <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
+   <% else %>
+   &infin;
+  <span style="margin-left: -120px; ">days left</span>
+  <% end %>
+
+  <div id='progress_bg' class='small bottomprogressbg'>
+    <div id='progress' class='bottomprogress' style='width: <%= Order.percent %>%; float:left'>
+    </div><div id='progress_text' style="float: left; margin-top: -7px;"><%= Order.percent %>% <%= Settings.progress_text %></div>
+  </div>
+ </li>
+ <% else %>
+   <div id='progress_bg' class='small bottomprogressbg'>
+   <div id='progress' class='bottomprogress' style='width: <%= Order.percent %>%; '>
+   </div><div id='progress_text' style="float: left; margin-top: -7px;"><%= Order.percent %>% <%= Settings.progress_text %></div>
+  </div>
+  <% end %>
+  </div>
+
+
+
+
+</div><br/>
+<br/><br/><br/><br/><br/><p class="first" style="text-align:center; width: 250px; font-size:30px; text-shadow:none; color:#fff;">So please do share!</p>
+
+<div class="social-buttons" style="background-color: transparent;">
+    <%= link_to 'Share on Facebook', '', class: "zocial facebook" %>
+    <%= link_to 'Share on Twitter', '', class: "zocial twitter" %>
+  </div>
+<br/><br/><br />
+<br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br />
+<br/><br/>
+</div>
+
+
