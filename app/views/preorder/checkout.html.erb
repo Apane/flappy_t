@@ -31,15 +31,47 @@
       <div class="rightside-cheq"
       <div class="main_content ">
       <form accept-charset="UTF-8" action="/preorder/prefill" id="checkout" method="post"><div style="margin:0;padding:0;display:inline">
-       <span class="font-cheq">I WANT <input id="quantity" name="quantity" style="width: 100px;float: none; "/> FLAPPY'S</span><br /><br />
+       <span class="font-cheq">I WANT <input id="quantity" name="quantity" value="1" style="width: 100px;float: none; "/> FLAPPY'S</span><br /><br />
        <span class="font-cheq">SHIP TO</span>
           <select name="shippingoptions" id="shippingoptions">
-            <option value="USA">United States - FREE!</option>
-            <option value="CA">Canada - $4.99</option>
-            <option value="UK">United Kingdom - $4.99</option>
+            <% Order::SHIPPING_COST.each do |locale, price| %>
+              <option value="<%= locale %>">
+                <%= locale %> -
+                <%= "$" + price.to_f.round(2).to_s %>
+              </option>
+            <% end %>
           </select>
        <br /><br />
-       <span class="font-cheq">TOTAL</span><div class="forminput" style="margin-right: 270px; width: 80px;">$15.99</div>
+       <span class="font-cheq">TOTAL</span>
+       <div id="totalprice" class="forminput" style="margin-right: 270px; width: 80px;">
+        $<%= "%.2f" % Settings.price %>
+       </div>
+       <br /><br />
+
+      <span class="font-cheq">
+        SEND AS GIFT?
+        <%= check_box_tag :gift, :gift, @gift %>
+      </span>
+      <br /><br />
+
+      <div id="gift-form-section" class="<%= @gift ? '' : 'hidden' %>">
+        <div class="font-cheq clearfix">
+          To:
+          <%= text_field_tag :to_name, nil, :class => "forminput topinput", :placeholder => "Name" %>
+          <%= text_field_tag :to_email, nil, :class => "forminput", :placeholder => "Email" %>
+        </div>
+        <br />
+        <div class="font-cheq clearfix">
+          From:
+          <%= text_field_tag :from_name, nil, :class => "forminput topinput", :placeholder => "Name" %>
+          <%= text_field_tag :from_email, nil, :class => "forminput", :placeholder => "Email" %>
+        </div>
+        <br />
+        <div class="font-cheq clearfix">
+          Note:
+          <%= text_area_tag :note, nil, :class => "forminput", :rows => 5 %>
+        </div>
+      </div>
 
       <input name="utf8" type="hidden" value="&#x2713;" />
       <input name="authenticity_token" type="hidden" value="eHN/nv4yb3/Kk3Cy2NDLOJOCWzv7CWS/YAFopWAMHIg=" /></div>

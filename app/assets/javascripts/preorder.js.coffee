@@ -9,6 +9,27 @@ Selfstarter =
     else
       $("#email").addClass("highlight") unless Selfstarter.firstTime
       $("#amazon_button").addClass("disabled") unless $("#amazon_button").hasClass("disabled")
+
+  bindPricingChange: ->
+    $("#quantity, #shippingoptions").change ->
+      units = $("#quantity").val()
+      shippingKey = $("#shippingoptions").val()
+      shipping = {
+        "United States": 4.95,
+        "Canada": 7.95,
+        "International": 12.95
+        }[shippingKey]
+      price = (15.00 * parseInt(units)) + shipping
+      $("#totalprice").text("$" + price);
+
+  bindGiftCheckbox: ->
+    $("#gift").change ->
+      val = $(this).is(":checked")
+      if val
+        $("#gift-form-section").removeClass("hidden")
+      else
+        $("#gift-form-section").addClass("hidden")
+
   init: ->
     checkoutOffset = $('body').height() - $('.footer').outerHeight() #needs to be done upon init
 
@@ -19,6 +40,10 @@ Selfstarter =
     # The first time they type in their email, we don't want it to throw a validation error
     $("#email").change ->
       Selfstarter.firstTime = false
+
+    # Bind gift checkbox, pricing
+    Selfstarter.bindGiftCheckbox()
+    Selfstarter.bindPricingChange()
 
     # init placeholder image for video
     $("#video_image").on "click", ->
