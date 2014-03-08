@@ -2587,6 +2587,20 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
     left: 0;
     border-width: 0 0 1px;
 }
+@media(max-width:767px) {
+    .navbar-fixed-top, .navbar-fixed-bottom {
+    position: relative;
+    width: 100%;
+    background:#fff;}
+    .navbar-nav {
+        background:#fff;
+    }
+    .nav {
+        background:#fff;
+    }
+
+}
+
 @media(min-width:768px) {
     .navbar-fixed-top, .navbar-fixed-bottom {
     border-radius: 0;
@@ -4638,7 +4652,7 @@ th.hidden-print, td.hidden-print {
     text-decoration:  underline;
     
 }
-.first-p a: hover  {
+.first-p a:hover  {
     color:  #69E8E8 !important;
     text-decoration:  underline;
 }
