@@ -65,8 +65,9 @@ margin: 0 15px;
 
 .flappynav {
   position: fixed;
+  z-index:9999;
+  border-bottom: 1px solid #ccc;
 }
-
 
 @media (max-width: 768px) {
   .flappynav {
