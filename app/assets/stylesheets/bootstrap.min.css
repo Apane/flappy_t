@@ -2619,7 +2619,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
     border-radius:  10px;
     
 }
-.navbar-brand: hover, .navbar-brand:focus {
+.navbar-brand:hover, .navbar-brand:focus {
     background-color:  #55C9D0;
       text-decoration: none;
 }
