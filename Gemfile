@@ -32,7 +32,7 @@ gem 'rspec-rails', '~> 2.0'
 gem 'shoulda'
 
 # jQuery
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.0'
 gem 'jquery-ui-rails'
 
 # Kickstarter's awesome Amazon Flexible Payments gem
