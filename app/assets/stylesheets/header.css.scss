@@ -74,4 +74,17 @@ margin: 0 15px;
   }
 }
 
+@media screen and (device-aspect-ratio: 40/71) {
+    .flappynav {
+    position: relative;
+  }
+}
+
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .flappynav {
+    position: relative;
+  }
+}
+
 
