@@ -35,7 +35,7 @@ video_embed_url: "https://youtube.googleapis.com/v/0DgYM9blFa4"
 # NOTE: you can set this to false, and no image will be use - first frame of the video will be displayed
 #
 # NOTE: this only works for youtube video at the moment.  If its not for youtube, then just leave this property blank
-use_video_placeholder: false
+use_video_placeholder: true
 
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
 
