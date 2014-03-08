@@ -33,13 +33,13 @@ $(document).ready(function(){
 
   		if (img==1) {
 
-		 $('.imgbig').html("<%= asset_path src: 'flappy1.jpg', height: '275', width: '391' %>");
+		 $('.imgbig').html('<img alt="Flappy1" height="275" src="/assets/flappy1.jpg" width="391">');
 		} else if (img==2) {
 
-		 $('.imgbig').html("<%= asset_path src: 'flappy2.jpg', height: '275', width: '391' %>");
+		 $('.imgbig').html('<img alt="Flappy1" height="275" src="/assets/flappy2.jpg" width="391">');
 		} else if (img==3) {
 
-		 $('.imgbig').html("<%= asset_path src: 'flappy3.jpg', height: '275', width: '391' %>");
+		 $('.imgbig').html('<img alt="Flappy1" height="275" src="/assets/flappy3.jpg" width="391">');
 		}
 
 

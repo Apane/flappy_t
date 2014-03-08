@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="width: 100%; min-width: 1000px;">
-  <div class="container">
-    <div class="wrapper-nav">
-    <div class="navbar-header">
-      <%= link_to logo, root_path, class: 'brand' %></a>
+<nav class="flappynav" style="width: 100%; min-width:1024px; background: #fff;">
+  <div class="navigationcontainer">
+    <div class="navwrapper" style="width:960px; margin:auto;">
+    <div class="navbarheader">
+      <div id="logo" style=""><%= link_to logo, root_path %></a></div>
     </div>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="navright">
          <li class=""><%= link_to 'Meet Flappy', '#meetflappy' %></li>
          <li class=""><%= link_to 'Details', '#details' %></li>
          <li class=""><%= link_to 'FAQ', faq_path %></li>

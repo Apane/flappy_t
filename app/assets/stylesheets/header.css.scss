@@ -41,5 +41,37 @@ margin-right: 5px;
   }
 }
 
+.navright {
+list-style-type:none;
+margin:0;
+padding:0;
+float: right;
+margin-top:-37px;
+color: #777;
+}
+
+.navright li {
+display:inline;
+margin: 0 15px;
+}
+
+.flappynav a {
+  color: #777;
+}
+
+.flappynav a:hover {
+  color: #777;
+}
+
+.flappynav {
+  position: fixed;
+}
+
+
+@media (max-width: 768px) {
+  .flappynav {
+    position: relative;
+  }
+}
 
 
