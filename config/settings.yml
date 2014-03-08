@@ -26,40 +26,8 @@ value_proposition: "We (hate) love Flappy Bird so much we made a Flappy Toy game
 
 # YouTube or Vimeo Video URL (The embed URL, without the query string options)
 # Replace /embed/ in your video url path with /v/ for video playback to work.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 video_embed_url: "https://youtube.googleapis.com/v/0DgYM9blFa4"
-=======
-video_embed_url: "http://youtu.be/0DgYM9blFa4"
->>>>>>> added video
-=======
-video_embed_url: "http://www.youtube.com/watch?v=0DgYM9blFa4&feature=youtu.be"
->>>>>>> added video
-=======
-video_embed_url: "http//www.youtube.com/v/0DgYM9blFa4"
->>>>>>> fixed video
-=======
-video_embed_url: "https//www.youtube.com/v/0DgYM9blFa4"
->>>>>>> fixed video
-=======
-video_embed_url: "https://www.youtube.com/v/D1L3o88GKew"
->>>>>>> video replacement test
-=======
-video_embed_url: "https//www.youtube.com/v/0DgYM9blFa4"
->>>>>>> youtubefix
-=======
-video_embed_url: "www.youtube.com/v/0DgYM9blFa4"
->>>>>>> updated keys + video
-=======
-video_embed_url: "https://youtube.googleapis.com/v/0DgYM9blFa4"
->>>>>>> updated keys + video
 
 # If set to true, then the image at "/assets/video_placeholder.png" will be shown in place of the youtube
 # video.  When the user clicks it, the vid will replace the image and start playing.
