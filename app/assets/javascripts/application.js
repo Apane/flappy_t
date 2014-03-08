@@ -21,26 +21,34 @@
 //= require bootstrap.min
 //= require_tree .
 
-
 $(document).ready(function(){
+  $( ".big1" ).show();
+  $( ".big2" ).hide();
+  $( ".big3" ).hide();
     $(".imgthumb").click(function(){
-    	$(".thumbnailcurrent").addClass("thumbnails");
-    	$(".thumbnails").removeClass("thumbnailcurrent");
-    	$(this).addClass("thumbnailcurrent");
-    	$(this).removeClass("thumbnails");
+      $(".thumbnailcurrent").addClass("thumbnails");
+      $(".thumbnails").removeClass("thumbnailcurrent");
+      $(this).addClass("thumbnailcurrent");
+      $(this).removeClass("thumbnails");
 
         var img=($(this).attr("data-id"));
 
-  		if (img==1) {
+      if (img==1) {
+        $( ".big1" ).show();
+        $( ".big2" ).hide();
+        $( ".big3" ).hide();
 
-		 $('.imgbig').html('<img alt="Flappy1" height="275" src="http://imgur.com/mPPdKbV" width="391">');
-		} else if (img==2) {
+    } else if (img==2) {
 
-		 $('.imgbig').html('<img alt="Flappy1" height="275" src="http://imgur.com/SIZjY8u" width="391">');
-		} else if (img==3) {
+     $( ".big1" ).hide();
+        $( ".big2" ).show();
+        $( ".big3" ).hide();
+    } else if (img==3) {
 
-		 $('.imgbig').html('<img alt="Flappy1" height="275" src="http://imgur.com/1Iu2fSs" width="391">');
-		}
+     $( ".big1" ).hide();
+        $( ".big2" ).hide();
+        $( ".big3" ).show();
+    }
 
 
 });
