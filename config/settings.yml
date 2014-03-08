@@ -54,7 +54,7 @@ payment_description: "Your shipping address will be collected once the campaign 
 # Amazon limits how much we can charge people with their Multi-Use tokens.
 # You probably should add some leeway to account for international shipping
 # this value will be added to the price to create a charge limit
-charge_limit: 12.00
+charge_limit: 0.00
 
 # Stats settings
 
