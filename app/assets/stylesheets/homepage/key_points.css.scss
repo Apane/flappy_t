@@ -136,9 +136,14 @@ h3 {
 
 
 .social-buttons-bottom a{
-  color: white;
+    color: white;
+    text-decoration: none;
 }
 
+.social-buttons-bottom a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
 
 #four {
     height: 550px;
