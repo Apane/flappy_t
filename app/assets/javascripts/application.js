@@ -19,6 +19,7 @@
 //= require preorder
 //= require bootstrap-wysihtml5
 //= require bootstrap.min
+//= require app_assets
 //= require_tree .
 
 
