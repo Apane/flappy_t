@@ -66,7 +66,7 @@ class Order < ActiveRecord::Base
   end
 
   def self.percent
-    (Order.revenue.to_f / Order.goal.to_f) * 100.to_f
+    ((Order.revenue.to_f / Order.goal.to_f) * 100).round
   end
 
   # See what it looks like when you have some backers! Drop in a number instead of Order.count
