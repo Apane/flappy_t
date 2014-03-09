@@ -40,8 +40,8 @@ use_video_placeholder: true
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
 
 # To find your access key and secret key, head over to here --> http://bit.ly/R4I4ky (Follow that guide in the Seller Central page)
-amazon_access_key: "AKIAJZLGMY3KXLGCIDLQ"
-amazon_secret_key: "cMboCWPr9FDWIXgWwIYAHZheZWLiFVegI6bLJbef"
+amazon_access_key: ""
+amazon_secret_key: ""
 price: 	15.00
 
 # if use_payment_options is set to true, then a set of radio buttons will be displayed with various payment options.
