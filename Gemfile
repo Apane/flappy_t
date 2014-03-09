@@ -15,10 +15,10 @@ gem 'pry-rails'
 
 gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
 gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-# gem "asset_sync"
-# gem "fog"
+gem "asset_sync"
+gem "fog"
 
-gem "dotenv-rails", :groups => [:development, :test]
+gem "dotenv-rails"
 gem "foreman"
 
 # gem 'thin'
