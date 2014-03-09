@@ -11,16 +11,27 @@ Selfstarter =
       $("#amazon_button").addClass("disabled") unless $("#amazon_button").hasClass("disabled")
 
   bindPricingChange: ->
-    $("#quantity, #shippingoptions").change ->
+    $("#quantity, #shippingoptions, #shared").change ->
+      shared = $("#shared").val()
       units = $("#quantity").val()
       shippingKey = $("#shippingoptions").val()
       shipping = {
         "United States": 4.95,
         "Canada": 7.95,
         "International": 12.95
-        }[shippingKey]
-      price = (15.00 * parseInt(units)) + shipping
+        }
+      price = (15.00 * parseInt(units)) + shipping[shippingKey]
+
+      if (shared == "1" && shippingKey == "United States")
+        console.log("hello")
+        price = price - shipping[shippingKey]
+
       $("#totalprice").text("$" + price);
+
+  bindSocial: ->
+    $(".facebook-btn, .tweet-btn").click ->
+      $("#shared").val(1);
+      $("#shared").trigger("change")
 
   bindFBShare: ->
     $(".facebook-btn").click ->
@@ -57,6 +68,7 @@ Selfstarter =
     Selfstarter.bindGiftCheckbox()
     Selfstarter.bindPricingChange()
     Selfstarter.bindFBShare()
+    Selfstarter.bindSocial()
 
     # init placeholder image for video
     $("#video_image").on "click", ->

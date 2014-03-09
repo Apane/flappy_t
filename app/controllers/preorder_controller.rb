@@ -29,10 +29,11 @@ class PreorderController < ApplicationController
     else
       price = Settings.price
     end
+    price = calculate_price(price)
 
     @order = Order.prefill!(
       :name => Settings.product_name,
-      :price => calculate_price(price),
+      :price => price,
       :user_id => @user.id,
       :payment_option => payment_option
     )
@@ -86,9 +87,11 @@ class PreorderController < ApplicationController
   private
 
   def calculate_price(unit_price)
-    units = params[:quantity].try(:to_i) || 0 # default to 0
-    locale = params[:shippingoptions] || "United States"
-    shipping = Order::SHIPPING_COST[locale]
+    units    = params[:quantity].try(:to_i) || 0 # default to 0
+    locale   = params[:shippingoptions] || "United States"
+    shared   = params[:shared] == "1"
+    shipping = (shared && locale == "United States") ?
+      0.0 : Order::SHIPPING_COST[locale]
     (unit_price.to_f * units) + shipping
   end
 
