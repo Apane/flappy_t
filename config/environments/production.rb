@@ -10,8 +10,11 @@ Selfstarter::Application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.asset_sync.aws_access_key = ENV['AWS_ACCESS_KEY_ID']
-  config.asset_sync.aws_access_secret = ENV['AWS_SECRET_ACCESS_KEY']
+  config.asset_sync.aws_access_key = ['AKIAJZLGMY3KXLGCIDLQ']
+  config.asset_sync.aws_access_secret = ['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']
+
+  ""
+amazon_secret_key: ""
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
