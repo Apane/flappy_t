@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
+gem "airbrake"
+
 gem "rails", '~>4.0.0'
 # Remember to require dalli if you're using memcached
 gem 'dalli'
