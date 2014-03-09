@@ -14,10 +14,7 @@ Selfstarter::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.action_controller.asset_host = Proc.new do |source, request|
-    scheme = request.ssl? ? "https" : "http"
-    "#{scheme}://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
-  end
+  config.action_controller.asset_host = "http://flappytoycom.s3.amazonaws.com"
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
