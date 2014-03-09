@@ -19,7 +19,7 @@ class PreorderController < ApplicationController
   end
 
   def prefill
-    @user = User.find_or_create_by(:email => params[:email])
+    @user = User.find_or_create_by(:email => params[:from_email])
 
     if Settings.use_payment_options
       payment_option_id = params['payment_option']
