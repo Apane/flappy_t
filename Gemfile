@@ -44,6 +44,7 @@ gem 'shoulda'
 # jQuery
 gem 'jquery-rails', '2.1.0'
 gem 'jquery-ui-rails'
+gem "jquery-validation-rails"
 
 # Kickstarter's awesome Amazon Flexible Payments gem
 gem 'amazon_flex_pay'

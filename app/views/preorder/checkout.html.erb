@@ -38,7 +38,11 @@
       <div class="main_content ">
       <form accept-charset="UTF-8" action="/preorder/prefill" id="checkout" method="post"><div style="margin:0;padding:0;display:inline">
         <%= hidden_field_tag :shared, 0 %>
-       <span class="font-cheq">I WANT <input id="quantity" name="quantity" value="1" style="width: 60px;float: none; "/> FLAPPY'S</span><br /><br />
+       <span class="font-cheq">
+        I WANT
+        <input id="quantity" name="quantity" value="1" style="width: 60px;float: none; " type="number" min="1" required/> FLAPPY'S
+      </span>
+      <br /><br />
        <span class="font-cheq">SHIP TO</span>
           <select name="shippingoptions" id="shippingoptions">
             <% Order::SHIPPING_COST.each do |locale, price| %>
@@ -64,7 +68,7 @@
        <br /><br />
 
       <span class="font-cheq">EMAIL</span>
-        <%= text_field_tag :from_email, nil, :class => "forminput", :placeholder => "Email" %>
+        <%= text_field_tag :from_email, nil, :class => "forminput", :placeholder => "Email", :type => "email", :required => true %>
       <br /><br />
 
       <span class="font-cheq">
