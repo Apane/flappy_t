@@ -1,4 +1,5 @@
 module PreorderHelper
+
   def like_button(width = 70, show_faces = false)
     raw "<div class=\"fb-like\" data-send=\"false\" data-width=\"#{width}\" data-layout=\"box_count\" data-show-faces=\"true\"></div>"
   end
@@ -6,9 +7,18 @@ module PreorderHelper
     image_url = URI.encode("#{request.scheme}://#{request.host}#{image_path(Settings.product_image_path)}")
     raw "<a href='http://pinterest.com/pin/create/button/?url=#{encoded_root_url}&media=#{image_url}' class='pin-it-button' count-layout='vertical'><img border='0' src='//assets.pinterest.com/images/PinExt.png' title='Pin It' /></a>"
   end
-  def tweet_button
-    tweet_text = "Play Flappy Bird with FLAPPY, the wireless toy controller. http://www.flappytoy.com"
-    raw "<a href='https://twitter.com/share' id='tweet_button' class='twitter-share-button twitter-button' data-url='#{request.scheme}//#{request.host}' data-via='#{@flappytoy}' data-lang='en' data-count='vertical' data-text=\"#{tweet_text}\">Share on Twitter</a>"
+
+  def tweet_button(caption = nil)
+    caption ||= "Share on Twitter"
+    tweet_text = "Play Flappy Bird with FLAPPY, the wireless toy controller. "
+    querystring = {
+      :url => "http://www.flappytoy.com",
+      :text => tweet_text,
+      :via => "flappytoy",
+      :count => "vertical"
+    }.map { |k, v| "#{k}=#{v}" }.join("&")
+
+    link_to caption, "https://twitter.com/share?#{querystring}", :target => "_blank"
   end
 
   def video_url

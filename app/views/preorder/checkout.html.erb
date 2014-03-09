@@ -47,7 +47,15 @@
               </option>
             <% end %>
           </select><br/>
-       <br /><br />Share with Facebook or Twitter to get free U.S. shipping:&nbsp;&nbsp;&nbsp;<%=image_tag 'facebook.png' %>&nbsp;&nbsp;&nbsp;<%=image_tag 'twitter.png' %><br/><br/>
+       <br /><br />
+
+       Share with Facebook or Twitter to get free U.S. shipping:
+       &nbsp;
+       <span class="facebook-btn"><%= image_tag("facebook.png") %></span>
+       &nbsp;
+       <%= tweet_button image_tag("twitter.png") %>
+       <br/><br/>
+
        <span class="font-cheq">TOTAL</span>
        <div id="totalprice" class="forminput" style="margin-right: 270px; width: 80px;">
         $<%= "%.2f" % Settings.price %>
