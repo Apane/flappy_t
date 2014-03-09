@@ -59,7 +59,7 @@ class PreorderController < ApplicationController
     redirect_to AmazonFlexPay.multi_use_pipeline(@order.uuid, callback_url,
                                                  :transaction_amount => @order.price.to_f,
                                                  :global_amount_limit => @order.price.to_f + Settings.charge_limit,
-                                                 :collect_shipping_address => "True",
+                                                 :collect_shipping_address => "False",
                                                  :payment_reason => Settings.payment_description)
   end
 
