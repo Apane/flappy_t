@@ -13,9 +13,6 @@ Selfstarter::Application.configure do
   config.asset_sync.aws_access_key = ['AKIAJZLGMY3KXLGCIDLQ']
   config.asset_sync.aws_access_secret = ['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']
 
-  ""
-amazon_secret_key: ""
-
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
