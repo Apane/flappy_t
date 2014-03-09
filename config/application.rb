@@ -11,7 +11,7 @@ module Selfstarter
 
     config.assets.enabled = true
     config.assets.digest = true
-    config.assets.precompile += %w( main.css.scss application.css bootstrap.css bootstrap.min.css checkout.css.scss footer.css.scss header.css.scss homepage.css.scss mystyle.scss.erb preorder.css.scss primitives.scss.erb reset.css share.css.scss  variables.css.scss zocial.css )
+    config.assets.precompile += %w( main.css.scss application.css bootstrap.css bootstrap.min.css checkout.css.scss footer.css.scss header.css.scss homepage.css.scss mystyle.scss.erb preorder.css.scss primitives.scss.erb reset.css share.css.scss variables.css.scss zocial.css )
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
