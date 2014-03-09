@@ -1,3 +1,3 @@
-AmazonFlexPay.access_key = Settings.amazon_access_key
-AmazonFlexPay.secret_key = Settings.amazon_secret_key
+AmazonFlexPay.access_key = ENV["AKIAJZLGMY3KXLGCIDLQ"]
+AmazonFlexPay.secret_key = ENV["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"]
 AmazonFlexPay.go_live! if Rails.env.production?
