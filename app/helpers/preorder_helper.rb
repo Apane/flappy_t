@@ -8,7 +8,8 @@ module PreorderHelper
     raw "<a href='http://pinterest.com/pin/create/button/?url=#{encoded_root_url}&media=#{image_url}' class='pin-it-button' count-layout='vertical'><img border='0' src='//assets.pinterest.com/images/PinExt.png' title='Pin It' /></a>"
   end
 
-  def tweet_button
+  def tweet_button(caption = nil)
+    caption ||= "Share on Twitter"
     tweet_text = "Play Flappy Bird with FLAPPY, the wireless toy controller. "
     querystring = {
       :url => "http://www.flappytoy.com",
@@ -17,7 +18,7 @@ module PreorderHelper
       :count => "vertical"
     }.map { |k, v| "#{k}=#{v}" }.join("&")
 
-    link_to "Share on Twitter", "https://twitter.com/share?#{querystring}", :target => "_blank"
+    link_to caption, "https://twitter.com/share?#{querystring}", :target => "_blank"
   end
 
   def video_url

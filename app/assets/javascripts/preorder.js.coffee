@@ -22,6 +22,17 @@ Selfstarter =
       price = (15.00 * parseInt(units)) + shipping
       $("#totalprice").text("$" + price);
 
+  bindFBShare: ->
+    $(".facebook-btn").click ->
+      FB.ui({
+        method: "feed",
+        display: "popup",
+        redirect_uri: "http://www.flappytoy.com",
+        link: "http://www.flappytoy.com",
+        caption: "FlappyToy - Play Flappy Bird with the wireless toy",
+        description: "Flappy is no ordinary plush toy.  He's wireless and controls the game when you lift him up!"
+      })
+
   bindGiftCheckbox: ->
     $("#gift").change ->
       val = $(this).is(":checked")
@@ -44,6 +55,7 @@ Selfstarter =
     # Bind gift checkbox, pricing
     Selfstarter.bindGiftCheckbox()
     Selfstarter.bindPricingChange()
+    Selfstarter.bindFBShare()
 
     # init placeholder image for video
     $("#video_image").on "click", ->
