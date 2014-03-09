@@ -29,8 +29,9 @@ Selfstarter =
         display: "popup",
         redirect_uri: "http://www.flappytoy.com",
         link: "http://www.flappytoy.com",
-        caption: "FlappyToy - Play Flappy Bird with the wireless toy",
-        description: "Flappy is no ordinary plush toy.  He's wireless and controls the game when you lift him up!"
+        caption: "Play Flappy Bird with the wireless toy",
+        description: "Flappy is no ordinary plush toy.  He's wireless and controls the game when you lift him up!",
+        picture: "http://flappytoycom.s3.amazonaws.com/assets/video_placeholder.png"
       })
 
   bindGiftCheckbox: ->
