@@ -19,52 +19,57 @@ class PreorderController < ApplicationController
   end
 
   def prefill
-    @user = User.find_or_create_by(:email => params[:from_email])
+    if params[:from_email].present?
 
-    if Settings.use_payment_options
-      payment_option_id = params['payment_option']
-      raise Exception.new("No payment option was selected") if payment_option_id.nil?
-      payment_option = PaymentOption.find(payment_option_id)
-      price = payment_option.amount
+      @user = User.find_or_create_by(:email => params[:from_email])
+
+      if Settings.use_payment_options
+        payment_option_id = params['payment_option']
+        raise Exception.new("No payment option was selected") if payment_option_id.nil?
+        payment_option = PaymentOption.find(payment_option_id)
+        price = payment_option.amount
+      else
+        price = Settings.price
+      end
+      price = calculate_price(price)
+
+      @order = Order.prefill!(
+        :name => Settings.product_name,
+        :price => price,
+        :user_id => @user.id,
+        :payment_option => payment_option
+      )
+
+      # Check for gift settings,
+      # sending email notification if valid
+      if params[:gift].present? &&
+         (params[:from_email].present? && params[:to_email].present?)
+        info = GiftInfo.new
+        info.from_name  = params[:from_name]
+        info.from_email = params[:from_email]
+        info.to_name    = params[:to_name]
+        info.to_email   = params[:to_email]
+        info.note       = params[:note]
+        info.order_id   = @order.id
+        info.save!
+      end
+
+      # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
+      # Then, if they confirm the payment, Amazon POSTs us their shipping details and phone number
+      # From there, we save it, and voila, we got ourselves a preorder!
+      port = Rails.env.production? ? "" : ":3000"
+      callback_url = "#{request.scheme}://#{request.host}#{port}/preorder/postfill"
+      redirect_to AmazonFlexPay.multi_use_pipeline(
+        @order.uuid,
+        callback_url,
+       :transaction_amount       => @order.price.to_f,
+       :global_amount_limit      => @order.price.to_f + Settings.charge_limit,
+       :collect_shipping_address => "False",
+       :payment_reason           => Settings.payment_description
+      )
     else
-      price = Settings.price
+      redirect_to preorder_checkout_url
     end
-    price = calculate_price(price)
-
-    @order = Order.prefill!(
-      :name => Settings.product_name,
-      :price => price,
-      :user_id => @user.id,
-      :payment_option => payment_option
-    )
-
-    # Check for gift settings,
-    # sending email notification if valid
-    if params[:gift].present? &&
-       (params[:from_email].present? && params[:to_email].present?)
-      info = GiftInfo.new
-      info.from_name  = params[:from_name]
-      info.from_email = params[:from_email]
-      info.to_name    = params[:to_name]
-      info.to_email   = params[:to_email]
-      info.note       = params[:note]
-      info.order_id   = @order.id
-      info.save!
-    end
-
-    # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
-    # Then, if they confirm the payment, Amazon POSTs us their shipping details and phone number
-    # From there, we save it, and voila, we got ourselves a preorder!
-    port = Rails.env.production? ? "" : ":3000"
-    callback_url = "#{request.scheme}://#{request.host}#{port}/preorder/postfill"
-    redirect_to AmazonFlexPay.multi_use_pipeline(
-      @order.uuid,
-      callback_url,
-     :transaction_amount       => @order.price.to_f,
-     :global_amount_limit      => @order.price.to_f + Settings.charge_limit,
-     :collect_shipping_address => "False",
-     :payment_reason           => Settings.payment_description
-    )
 end
 
   def postfill
