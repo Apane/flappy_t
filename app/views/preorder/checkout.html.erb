@@ -36,10 +36,15 @@
      <div style="width: 520px; float:right; margin-right:0px; margin-top: -652px;">
       <div class="rightside-cheq"
       <div class="main_content ">
+        <% if flash.alert %>
+          <div class="flash-error">
+            <%= flash.alert %>
+          </div>
+        <% end %>
       <form accept-charset="UTF-8" action="/preorder/prefill" id="checkout" method="post"><div style="margin:0;padding:0;display:inline">
         <%= hidden_field_tag :shared, 0 %>
        <span class="font-cheq">
-        I WANT
+          I WANT
         <input id="quantity" name="quantity" value="1" style="width: 60px;float: none; " type="number" min="1" required/> FLAPPY'S
       </span>
       <br /><br />

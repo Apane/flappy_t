@@ -67,9 +67,9 @@ class PreorderController < ApplicationController
        :collect_shipping_address => "False",
        :payment_reason           => Settings.payment_description
       )
-    else
-      redirect_to preorder_checkout_url
-    end
+  else
+    redirect_to preorder_checkout_url, :alert => "Please enter your email"
+  end
 end
 
   def postfill
