@@ -18,7 +18,7 @@ module PreorderHelper
       :count => "vertical"
     }.map { |k, v| "#{k}=#{v}" }.join("&")
 
-    link_to caption, "https://twitter.com/share?#{querystring}", :target => "_blank"
+    link_to caption, "https://twitter.com/share?#{querystring}", :target => "_blank", :class => "tweet-btn"
   end
 
   def video_url

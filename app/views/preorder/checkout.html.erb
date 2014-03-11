@@ -36,8 +36,18 @@
      <div style="width: 520px; float:right; margin-right:0px; margin-top: -652px;">
       <div class="rightside-cheq"
       <div class="main_content ">
+        <% if flash.alert %>
+          <div class="flash-error">
+            <%= flash.alert %>
+          </div>
+        <% end %>
       <form accept-charset="UTF-8" action="/preorder/prefill" id="checkout" method="post"><div style="margin:0;padding:0;display:inline">
-       <span class="font-cheq">I WANT <input id="quantity" name="quantity" value="1" style="width: 60px;float: none; "/> FLAPPY'S</span><br /><br />
+        <%= hidden_field_tag :shared, 0 %>
+       <span class="font-cheq">
+          I WANT
+        <input id="quantity" name="quantity" value="1" style="width: 60px;float: none; " type="number" min="1" required/> FLAPPY'S
+      </span>
+      <br /><br />
        <span class="font-cheq">SHIP TO</span>
           <select name="shippingoptions" id="shippingoptions">
             <% Order::SHIPPING_COST.each do |locale, price| %>
@@ -58,9 +68,13 @@
 
        <span class="font-cheq">TOTAL</span>
        <div id="totalprice" class="forminput" style="margin-right: 270px; width: 80px;">
-        $<%= "%.2f" % Settings.price %>
+        $<%= "%.2f" % (Settings.price + Order::SHIPPING_COST["United States"]) %>
        </div>
        <br /><br />
+
+      <span class="font-cheq">EMAIL</span>
+        <%= text_field_tag :from_email, nil, :class => "forminput", :placeholder => "Email", :type => "email", :required => true %>
+      <br /><br />
 
       <span class="font-cheq">
         SEND AS GIFT?
@@ -70,15 +84,14 @@
 
       <div id="gift-form-section" class="<%= @gift ? '' : 'hidden' %>">
         <div class="font-cheq clearfix">
-          To:
-          <%= text_field_tag :to_name, nil, :class => "forminput topinput", :placeholder => "Name" %>
-          <%= text_field_tag :to_email, nil, :class => "forminput", :placeholder => "Email" %>
+          From:
+          <%= text_field_tag :from_name, nil, :class => "forminput topinput", :placeholder => "Name" %>
         </div>
         <br />
         <div class="font-cheq clearfix">
-          From:
-          <%= text_field_tag :from_name, nil, :class => "forminput topinput", :placeholder => "Name" %>
-          <%= text_field_tag :from_email, nil, :class => "forminput", :placeholder => "Email" %>
+          To:
+          <%= text_field_tag :to_name, nil, :class => "forminput topinput", :placeholder => "Name" %>
+          <%= text_field_tag :to_email, nil, :class => "forminput", :placeholder => "Email" %>
         </div>
         <br />
         <div class="font-cheq clearfix">

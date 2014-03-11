@@ -19,49 +19,58 @@ class PreorderController < ApplicationController
   end
 
   def prefill
-    @user = User.find_or_create_by(:email => params[:email])
+    if params[:from_email].present?
 
-    if Settings.use_payment_options
-      payment_option_id = params['payment_option']
-      raise Exception.new("No payment option was selected") if payment_option_id.nil?
-      payment_option = PaymentOption.find(payment_option_id)
-      price = payment_option.amount
-    else
-      price = Settings.price
-    end
+      @user = User.find_or_create_by(:email => params[:from_email])
 
-    @order = Order.prefill!(
-      :name => Settings.product_name,
-      :price => calculate_price(price),
-      :user_id => @user.id,
-      :payment_option => payment_option
-    )
+      if Settings.use_payment_options
+        payment_option_id = params['payment_option']
+        raise Exception.new("No payment option was selected") if payment_option_id.nil?
+        payment_option = PaymentOption.find(payment_option_id)
+        price = payment_option.amount
+      else
+        price = Settings.price
+      end
+      price = calculate_price(price)
 
-    # Check for gift settings,
-    # sending email notification if valid
-    if params[:gift].present? &&
-       (params[:from_email].present? && params[:to_email].present?)
-      info = GiftInfo.new
-      info.from_name  = params[:from_name]
-      info.from_email = params[:from_email]
-      info.to_name    = params[:to_name]
-      info.to_email   = params[:to_email]
-      info.note       = params[:note]
-      info.order_id   = @order.id
-      info.save!
-    end
+      @order = Order.prefill!(
+        :name => Settings.product_name,
+        :price => price,
+        :user_id => @user.id,
+        :payment_option => payment_option
+      )
 
-    # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
-    # Then, if they confirm the payment, Amazon POSTs us their shipping details and phone number
-    # From there, we save it, and voila, we got ourselves a preorder!
-    port = Rails.env.production? ? "" : ":3000"
-    callback_url = "#{request.scheme}://#{request.host}#{port}/preorder/postfill"
-    redirect_to AmazonFlexPay.multi_use_pipeline(@order.uuid, callback_url,
-                                                 :transaction_amount => @order.price.to_f,
-                                                 :global_amount_limit => @order.price.to_f + Settings.charge_limit,
-                                                 :collect_shipping_address => "False",
-                                                 :payment_reason => Settings.payment_description)
+      # Check for gift settings,
+      # sending email notification if valid
+      if params[:gift].present? &&
+         (params[:from_email].present? && params[:to_email].present?)
+        info = GiftInfo.new
+        info.from_name  = params[:from_name]
+        info.from_email = params[:from_email]
+        info.to_name    = params[:to_name]
+        info.to_email   = params[:to_email]
+        info.note       = params[:note]
+        info.order_id   = @order.id
+        info.save!
+      end
+
+      # This is where all the magic happens. We create a multi-use token with Amazon, letting us charge the user's Amazon account
+      # Then, if they confirm the payment, Amazon POSTs us their shipping details and phone number
+      # From there, we save it, and voila, we got ourselves a preorder!
+      port = Rails.env.production? ? "" : ":3000"
+      callback_url = "#{request.scheme}://#{request.host}#{port}/preorder/postfill"
+      redirect_to AmazonFlexPay.multi_use_pipeline(
+        @order.uuid,
+        callback_url,
+       :transaction_amount       => @order.price.to_f,
+       :global_amount_limit      => @order.price.to_f + Settings.charge_limit,
+       :collect_shipping_address => "False",
+       :payment_reason           => Settings.payment_description
+      )
+  else
+    redirect_to preorder_checkout_url, :alert => "Please enter your email"
   end
+end
 
   def postfill
     unless params[:callerReference].blank?
@@ -86,9 +95,11 @@ class PreorderController < ApplicationController
   private
 
   def calculate_price(unit_price)
-    units = params[:quantity].try(:to_i) || 0 # default to 0
-    locale = params[:shippingoptions] || "United States"
-    shipping = Order::SHIPPING_COST[locale]
+    units    = params[:quantity].try(:to_i) || 0 # default to 0
+    locale   = params[:shippingoptions] || "United States"
+    shared   = params[:shared] == "1"
+    shipping = (shared && locale == "United States") ?
+      0.0 : Order::SHIPPING_COST[locale]
     (unit_price.to_f * units) + shipping
   end
 

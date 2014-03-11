@@ -3,13 +3,16 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
-production:
+production: &PROD
   adapter: postgresql
   encoding: unicode
   database: selfstarter_production
   pool: 5
   username: jenn
   password: jenn12
+
+dev_prod:
+  <<: *PROD
 
 development:
   adapter: postgresql

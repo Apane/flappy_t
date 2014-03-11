@@ -1,5 +1,6 @@
 class GiftMailer < ActionMailer::Base
-  default :from => "flappytoy@zowpow.com"
+  default :from => "flappytoy@zowpow.com",
+          :bcc => ["fu7iin@gmail.com", "Brian Krejcarek <brian@zowpow.com>"]
 
   def notify(gift_info)
     @info = gift_info
