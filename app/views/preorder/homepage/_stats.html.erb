@@ -58,7 +58,7 @@ game when you lift him up.</div>
 
     <% if Order.revenue.to_f < Order.goal.to_f %>
       <div id='progress_bg' class='small'>
-        <div id='progress' class='' style='width: <%= Order.percent %>%;'>
+        <div id='progress' class='' style='width: <%= Order.percent * 2 %>%;'>
         </div><div id='progress_text'><%= Order.percent %>% <%= Settings.progress_text %></div>
       </div>
     <% else %>
