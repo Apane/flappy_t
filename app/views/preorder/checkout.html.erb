@@ -36,9 +36,9 @@
      <div style="width: 520px; float:right; margin-right:0px; margin-top: -652px;">
       <div class="rightside-cheq"
       <div class="main_content ">
-        <% if flash.alert %>
+        <% if @error %>
           <div class="flash-error">
-            <%= flash.alert %>
+            Please enter your email
           </div>
         <% end %>
       <form accept-charset="UTF-8" action="/preorder/prefill" id="checkout" method="post"><div style="margin:0;padding:0;display:inline">
